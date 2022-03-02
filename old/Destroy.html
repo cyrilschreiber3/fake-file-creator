@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DestroyFiles</title>
+    </head>
+    <body>
+        <div class="Page">
+            <h1>Destroy Files</h1>
+            <form action="CreateDestroyFiles" method="POST"><br>
+                <input type="text" name="name"required id="name"><br>
+                <input type="number" name="size" min="1" id="size" required><br>
+                <select name="ext" id="ext">
+                    <option value=""></option>
+                    <option value=".pptx">.pptx</option>
+                    <option value=".docx">.docx</option>
+                    <option value=".xlsx">.xlsx</option>
+                    <option value=".txt">.txt</option>
+                    <option value=".zip">.zip</option>
+                    <option value=".png">.png</option>
+                    <option value=".jpg">.jpg</option>
+                    <option value=".eps">.eps</option>
+                    <option value=".psd">.psd</option>
+                    <option value=".mov">.mov</option>
+                    <option value=".mp4">.mp4</option>
+                    <option value=".mp3">.mp3</option>
+                    <option value=".pdf">.pdf</option>
+                </select><br>
+            </form>
+            <button id="button">Creer le fichier</button>
+            <div id="divReturn">
+            </div>
+        </div>
+    </body>
+</html>
+<script defer>
+    var size = 1000;
+    var sizeinput = document.getElementById("size");
+    sizeinput.oninput = function(){
+        size = document.getElementById("size").value;
+    }
+    var name2 = "Ficher";
+    var nameinput = document.getElementById("name");
+    nameinput.oninput = function(){
+        name2 = document.getElementById("name").value;
+    }
+    var ext = ".txt";
+    var extinput = document.getElementById("ext");
+    extinput.oninput = function(){
+        ext = document.getElementById("ext").value;
+    }
+    $(document).ready(function(){
+        $("#button").click(function(){
+            $("#divReturn").load('CreateFiles.php?size=' + size + '&name=' + name2 + '&ext=' + ext);
+        });
+    });
+</script>

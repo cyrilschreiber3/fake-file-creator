@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fake file creator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Fake file creator</h1>
+        <form action="destroyer.php" method="POST">
+            <label>file name</label><br>
+            <input type="text" id="filename" name="filename">
+            <select name="ext" id="ext">
+                <option value=""></option>
+                <option value=".pptx">.pptx</option>
+                <option value=".docx">.docx</option>
+                <option value=".xlsx">.xlsx</option>
+                <option value=".txt">.txt</option>
+                <option value=".zip">.zip</option>
+                <option value=".png">.png</option>
+                <option value=".jpg">.jpg</option>
+                <option value=".eps">.eps</option>
+                <option value=".psd">.psd</option>
+                <option value=".mov">.mov</option>
+                <option value=".mp4">.mp4</option>
+                <option value=".mp3">.mp3</option>
+                <option value=".pdf">.pdf</option>
+            </select><br>
+            <label>file size</label><br>
+            <input type="number" id="filesize" name="filesize">
+            <select name="unit" id="unit">
+                <option value="b">Bytes</option>
+                <option value="kb">Kilobytes</option>
+                <option value="mb">Megabytes</option>
+                <option value="gb">Gigabytes</option>
+            </select><br><br>
+            <input type="submit" value="send">
+        </form>
+    </body>
+
+</html>
