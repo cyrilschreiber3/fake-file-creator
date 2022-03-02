@@ -11,19 +11,23 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 $filepath = $path . "/fd/" . $filename;
 
 //True size
-if ($unit == "kb") {
-   $trueSize = $rawSize * 1024;
-} elseif ($unit == "mb") {
-   $trueSize = $rawSize * pow(1024, 2);
-} elseif ($unit == "gb") {
-   $trueSize = $rawSize * pow(1024, 3);
+switch ($unit) {
+   case "kb":
+      $trueSize = $rawSize * 1024;
+      break;
+   case "kb":
+      $trueSize = $rawSize * pow(1024, 2);
+      break;
+   case "kb":
+      $trueSize = $rawSize * pow(1024, 3);
+      break;
 }
 
 
 //echo "$filepath Raw: $rawSize True: $trueSize";
 
-createfile($filename,$trueSize);
-downloadfile($filename,$filepath);
+createfile($filename, $trueSize);
+downloadfile($filename, $filepath);
 
 
 ////////////
@@ -31,7 +35,8 @@ downloadfile($filename,$filepath);
 ////////////
 
 //Create file function
-function createfile($filename, $trueSize) {
+function createfile($filename, $trueSize)
+{
    $fh = fopen($filename, 'w');
    //$size = 1024 * 1024 * 10; // 10mb
    $chunk = 1024;
@@ -44,10 +49,11 @@ function createfile($filename, $trueSize) {
 
 
 //Download file function
-function downloadfile($filename, $filepath) {
+function downloadfile($filename, $filepath)
+{
    header('Content-Description: File Transfer');
    header("Content-type: application/octet-stream");
-   header("Content-Length: ".filesize($filepath));
+   header("Content-Length: " . filesize($filepath));
    header("Content-Disposition: attachment; filename=$filename");
    header("Pragma: no-cache");
    header("Expires: 0");
