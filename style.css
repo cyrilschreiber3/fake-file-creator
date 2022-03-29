@@ -1,5 +1,97 @@
 :root {
-    --color1: ;
-    --color2: ;
+    --color1: #3177E1;
+    --color1-dark: #2962b8;
+    --color2: #3D3D3D;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', arial, sans-serif;
+}
+
+h1 {
+    font-family: museo-sans, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+label {
+    font-family: museo-sans, Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+input[type=text], input[type=number], select {
+    height: 30px;
+    border: 0px solid #FFFFFF;
+    border-radius: 3px;
+}
+
+input[type=submit] {
+    background-color: var(--color1);
+    font-family: museo-sans, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    text-align: center;
+    color: white;
+    border: 0;
+    align-items: center;
+    border-radius: 3px;
+    width: 260px;
+    height: 45px;
+}
+
+input[type=submit]:hover {
+    background-color: var(--color1-dark);
+    color: #cfcfcf;
+}
+
+.container {
+    background-size: cover;
+    height: 100vh;
+    background: url(img/background.png) no-repeat center center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    background-color: var(--color2);
+    padding: 35px 60px 35px 60px;
+    box-shadow: 0px 15px 16px #0000002E;
+    border-radius: 6px;
+}
+
+.row {
+    display: flex;
+
+}
+
+.form-content {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: start;
+    padding: 10px;
+}
+
+.filename, .filesize {
+    flex-grow: 20;
+}
+
+.fileext, .sizeunit {
+    flex-grow: 1;
+}
+
+.submit {
+    margin-top: 33px;
+    display: flex;
+    justify-content: center;
+}
