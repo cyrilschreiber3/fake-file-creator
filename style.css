@@ -31,6 +31,7 @@ input[type=text], input[type=number], select {
     height: 30px;
     border: 0px solid #FFFFFF;
     border-radius: 3px;
+    padding-left: 10px;
 }
 
 input[type=submit] {
