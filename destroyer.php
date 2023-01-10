@@ -12,13 +12,16 @@ $filepath = $path . "/fd/" . $filename;
 
 //True size
 switch ($unit) {
+   case "b":
+      $trueSize = $rawSize;
+      break;
    case "kb":
       $trueSize = $rawSize * 1024;
       break;
-   case "kb":
+   case "mb":
       $trueSize = $rawSize * pow(1024, 2);
       break;
-   case "kb":
+   case "gb":
       $trueSize = $rawSize * pow(1024, 3);
       break;
 }
