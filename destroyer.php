@@ -8,7 +8,7 @@ $name = $_POST['filename'];
 $ext = $_POST['ext'];
 $filename = $name . $ext;
 $path = $_SERVER['DOCUMENT_ROOT'];
-$filepath = $path . "/fd/" . $filename;
+$filepath = $path . "/" . $filename;
 
 //True size
 switch ($unit) {
